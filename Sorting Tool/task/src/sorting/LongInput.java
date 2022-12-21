@@ -2,6 +2,7 @@ package sorting;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.Objects;
 
 public class LongInput implements Comparable<LongInput> {
@@ -11,10 +12,7 @@ public class LongInput implements Comparable<LongInput> {
         VALUE = value;
     }
     public int frequency(LongInputList longInputList) {
-        return (int) longInputList
-                .getLongInputs()
-                .stream()
-                .filter(longInput -> longInput.equals(this)).count();
+        return Collections.frequency(longInputList, this);
     }
 
     @Override
@@ -38,10 +36,6 @@ public class LongInput implements Comparable<LongInput> {
             return -1;
         }
         return 0;
-    }
-
-    public LongInput max(LongInput longInput) {
-        return this.compareTo(longInput) >= 0 ? this : longInput;
     }
 
     @Override
