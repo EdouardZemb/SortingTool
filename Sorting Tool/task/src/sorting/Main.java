@@ -4,16 +4,20 @@ import java.util.*;
 
 public class Main {
     public static void main(final String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        LongInputList longInputList = new LongInputList();
-        while (scanner.hasNextLong()) {
-            long number = scanner.nextLong();
-            longInputList.add(new LongInput(number));
+
+        InputList inputList = new WordInputList();
+        for (int i = 0; i < args.length; i = i+2) {
+            String arg = args[i];
+            if (Objects.equals(arg, "-dataType")) {
+                inputList = switch (args[i + 1]) {
+                    case "long" -> new LongInputList();
+                    case "line" -> new LineInputList();
+                    default -> new WordInputList();
+                };
+            }
         }
-        System.out.println(
-                "Total numbers: " + longInputList.getSize() + ".\n" +
-                "The greatest number: " + longInputList.getMaxValue() +
-                        " (" + longInputList.getMaxValueFrequency() +
-                        " time(s)).");
+
+        inputList.read();
+        System.out.println(inputList);
     }
 }
