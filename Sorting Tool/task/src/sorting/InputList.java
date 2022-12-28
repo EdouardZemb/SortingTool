@@ -22,9 +22,16 @@ public abstract class InputList<T extends Comparable<T>> {
 
     @Override
     public String toString() {
-        return "Total numbers: " + inputList.size() + ".\n" +
-                "The greatest " + dataType.name().toLowerCase() + " : " + maxValue() +
-                " (" + Collections.frequency(inputList, maxValue()) +
-                " time(s)).";
+
+        return "Total numbers: " +
+                inputList.size() +
+                ".\nThe " +
+                (dataType == DataType.LONG ? "greatest " : "longest ") +
+                dataType.name().toLowerCase() +
+                " : " +
+                maxValue() +
+                " (" +
+                Collections.frequency(inputList, maxValue()) +
+                " times(s)).";
     }
 }
