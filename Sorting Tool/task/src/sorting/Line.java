@@ -10,6 +10,11 @@ public class Line implements Comparable<Line> {
 
     @Override
     public int compareTo(@NotNull Line line) {
+        if (VALUE.length() > line.VALUE.length()) {
+            return 1;
+        } else if (line.VALUE.length() > VALUE.length()) {
+            return -1;
+        }
         return VALUE.compareTo(line.VALUE);
     }
 

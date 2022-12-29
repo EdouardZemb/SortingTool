@@ -11,6 +11,11 @@ public class Word implements Comparable<Word> {
 
     @Override
     public int compareTo(@NotNull Word word) {
+        if (VALUE.length() > word.VALUE.length()) {
+            return 1;
+        } else if (word.VALUE.length() > VALUE.length()) {
+            return -1;
+        }
         return VALUE.compareTo(word.VALUE);
     }
 
