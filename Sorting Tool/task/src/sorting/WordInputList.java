@@ -11,7 +11,7 @@ public class WordInputList extends InputList<Word> {
     @Override
     void read() {
         Scanner scanner = new Scanner(System.in);
-        Pattern pattern = Pattern.compile("\\w+");
+        Pattern pattern = Pattern.compile("\\S+");
         while (scanner.hasNext(pattern)) {
             Word word = new Word(scanner.next(pattern));
             inputList.add(word);
