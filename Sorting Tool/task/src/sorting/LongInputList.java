@@ -8,11 +8,12 @@ public class LongInputList extends InputList<Long> {
     }
 
     @Override
-    void read() {
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNextLong()) {
-            long number = scanner.nextLong();
-            inputList.add(number);
-        }
+    public Long findNextFrom(Scanner scanner) {
+        return scanner.nextLong();
+    }
+
+    @Override
+    public boolean hasNextIn(Scanner scanner) {
+        return scanner.hasNextLong();
     }
 }

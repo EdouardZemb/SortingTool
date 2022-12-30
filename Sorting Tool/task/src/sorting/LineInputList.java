@@ -4,15 +4,16 @@ import java.util.Scanner;
 
 public class LineInputList extends InputList<Line> {
     public LineInputList() {
-        super(DataType.LINE);
+        super( DataType.LINE);
     }
 
     @Override
-    void read() {
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNextLine()) {
-            Line line = new Line(scanner.nextLine());
-            inputList.add(line);
-        }
+    public Line findNextFrom(Scanner scanner) {
+        return new Line(scanner.nextLine());
+    }
+
+    @Override
+    public boolean hasNextIn(Scanner scanner) {
+        return scanner.hasNextLine();
     }
 }

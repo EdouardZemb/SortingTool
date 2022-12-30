@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Main {
     public static void main(final String[] args) {
-
         InputList inputList = new WordInputList();
+
         for (int i = 0; i < args.length; i = i+2) {
             String arg = args[i];
             if (Objects.equals(arg, "-dataType")) {
