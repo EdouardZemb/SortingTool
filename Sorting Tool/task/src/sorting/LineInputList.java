@@ -2,18 +2,17 @@ package sorting;
 
 import java.util.Scanner;
 
-public class LineInputList extends InputList<Line> {
+// Concrete class representing a list of line values
+public class LineInputList extends InputList<String> {
     public LineInputList() {
-        super( DataType.LINE);
+        super(DataType.LINE);
     }
 
     @Override
-    public Line findNextFrom(Scanner scanner) {
-        return new Line(scanner.nextLine());
-    }
-
-    @Override
-    public boolean hasNextIn(Scanner scanner) {
-        return scanner.hasNextLine();
+    public void read() {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNextLine()) {
+            inputList.add(scanner.nextLine());
+        }
     }
 }
