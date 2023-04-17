@@ -17,3 +17,4 @@ public class LongInputList extends InputList<Long> {
         }
     }
 }
+

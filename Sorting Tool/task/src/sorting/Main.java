@@ -14,12 +14,7 @@ public class Main {
             }
         }
 
-        // Read the input based on the data type
-        InputList inputList = switch (dataType) {
-            case LONG -> new LongInputList();
-            case LINE -> new LineInputList();
-            case WORD -> new WordInputList();
-        };
+        InputList inputList = InputListFactory.createInputList(dataType);
         inputList.read();
 
         // Compute and print the requested information
