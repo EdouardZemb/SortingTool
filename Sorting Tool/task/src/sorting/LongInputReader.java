@@ -10,5 +10,6 @@ public class LongInputReader implements InputReader<Long> {
             long number = scanner.nextLong();
             inputList.add(number);
         }
+        scanner.close();
     }
 }

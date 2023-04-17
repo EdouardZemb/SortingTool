@@ -2,7 +2,7 @@ package sorting;
 
 public class InputListFactory {
     public static InputList createInputList(DataType dataType) {
-        InputList inputList = null;
+        InputList inputList;
         switch (dataType) {
             case LONG -> {
                 inputList = new LongInputList();
