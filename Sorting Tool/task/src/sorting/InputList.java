@@ -8,6 +8,7 @@ import java.util.List;
 abstract class InputList<T extends Comparable<T>> implements ScannerReadable<T> {
     protected final DataType dataType;
     protected final List<T> inputList = new ArrayList<>();
+    protected InputReader<T> inputReader;
 
     public InputList(DataType dataType) {
         this.dataType = dataType;
@@ -23,5 +24,17 @@ abstract class InputList<T extends Comparable<T>> implements ScannerReadable<T> 
 
     public int getFrequency() {
         return Collections.frequency(inputList, maxValue());
+    }
+
+    public void add(T element) {
+        inputList.add(element);
+    }
+
+    public void setInputReader(InputReader<T> inputReader) {
+        this.inputReader = inputReader;
+    }
+
+    public void read() {
+        inputReader.readInput(this);
     }
 }
