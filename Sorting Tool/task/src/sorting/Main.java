@@ -1,23 +1,18 @@
 package sorting;
 
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        // Set the default data type to word
-        DataType dataType = DataType.WORD;
+    public static void main(final String[] args) {
+        InputReader inputReader = new ConsoleInputReader();
+        List<Integer> numbers = inputReader.readNumbers();
 
-        // Check if the -dataTypeValue argument was provided and set the data type accordingly
-        for (int i = 0; i < args.length; i++) {
-            if (args[i].equals("-dataTypeValue")) {
-                dataType = DataType.fromString(args[i + 1]);
-                break;
-            }
-        }
+        NumberAnalyzer numberAnalyzer = new NumberAnalyzer();
+        NumberStats stats = numberAnalyzer.analyze(numbers);
 
-        InputList inputList = InputListFactory.createInputList(dataType);
-        inputList.read();
+        OutputFormatter outputFormatter = new ConsoleOutputFormatter();
+        String output = outputFormatter.format(stats);
 
-        ResultPrinter resultPrinter = new ResultPrinter();
-        resultPrinter.printResults(dataType, inputList);
+        System.out.println(output);
     }
 }

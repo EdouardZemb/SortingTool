@@ -1,5 +1,7 @@
 package sorting;
 
-public interface InputReader<T extends Comparable<T>> {
-    void readInput(InputList<T> inputList);
+import java.util.List;
+
+public interface InputReader {
+    List<Integer> readNumbers();
 }
