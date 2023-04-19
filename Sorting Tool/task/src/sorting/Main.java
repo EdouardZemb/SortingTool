@@ -4,14 +4,22 @@ import java.util.*;
 
 public class Main {
     public static void main(final String[] args) {
-        InputReader inputReader = new ConsoleInputReader();
-        List<Integer> numbers = inputReader.readNumbers();
+        // parse command-line arguments
+        CommandLineArgumentsParser commandLineArgumentsParser = new CommandLineArgumentsParser(args);
+        InputType inputType = commandLineArgumentsParser.parseInputType();
 
-        NumberAnalyzer numberAnalyzer = new NumberAnalyzer();
-        NumberStats stats = numberAnalyzer.analyze(numbers);
+        // read input data
+        assert inputType != null;
+        InputReader inputReader = InputReaderFactory.create(inputType);
+        List<String> inputData = inputReader.readInput();
 
-        OutputFormatter outputFormatter = new ConsoleOutputFormatter();
-        String output = outputFormatter.format(stats);
+        // analyze input data
+        DataAnalyzer dataAnalyzer = DataAnalyzerFactory.create(inputType);
+        DataStats dataStats = dataAnalyzer.analyze(inputData);
+
+        // format and output analysis results
+        OutputFormatter<?> outputFormatter = OutputFormatterFactory.create(inputType);
+        String output = outputFormatter.format(dataStats);
 
         System.out.println(output);
     }
