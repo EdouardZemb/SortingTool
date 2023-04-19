@@ -2,7 +2,7 @@ package sorting;
 
 public class LineOutputFormatter implements OutputFormatter<String> {
     @Override
-    public String format(DataStats stats) {
+    public String format(DataStats<String> stats) {
         return String.format("Total lines: %d.%n" +
                         "The longest line:%n%s%n(%d time(s), %f%%).%n",
                 stats.getCount(), stats.getMax(), stats.getMaxCount(), stats.getMaxPercentage());

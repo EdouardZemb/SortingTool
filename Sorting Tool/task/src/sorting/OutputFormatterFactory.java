@@ -1,7 +1,7 @@
 package sorting;
 
 public class OutputFormatterFactory {
-    public static <T> OutputFormatter<?> create(InputType dataType) {
+    public static OutputFormatter<?> create(InputType dataType) {
         OutputFormatter<?> outputFormatter;
         switch (dataType) {
             case LONG -> outputFormatter = new NumberOutputFormatter();
