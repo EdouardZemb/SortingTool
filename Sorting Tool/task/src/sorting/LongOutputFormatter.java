@@ -1,6 +1,6 @@
 package sorting;
 
-public class NumberOutputFormatter implements OutputFormatter<Long> {
+public class LongOutputFormatter implements OutputFormatter<Long> {
     @Override
     public String format(DataStats<Long> stats) {
         return String.format("Total numbers: %d.%nThe greatest number: %d (%d time(s), %f%%).%n",

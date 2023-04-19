@@ -19,7 +19,7 @@ public class DataAnalyzerFactoryTest extends TestCase {
         assertTrue(analyzer instanceof LongAnalyzer);
     }
 
-    public void testCreateUnknownDataType() {
+    public void testCreateNullDataType() {
         try {
             @SuppressWarnings("unused")
             DataAnalyzer<?> analyzer = DataAnalyzerFactory.create(null);

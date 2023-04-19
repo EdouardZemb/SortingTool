@@ -25,7 +25,7 @@ public class DataStatsImpl<T> implements DataStats<T> {
 
     @Override
     public T getMax() {
-        return max.equals("") ? null : max;
+        return max == null || max.equals("") ? null : max;
     }
 
     @Override

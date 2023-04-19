@@ -17,6 +17,6 @@ public enum InputType {
                 return inputType;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Invalid input type: " + value);
     }
 }
