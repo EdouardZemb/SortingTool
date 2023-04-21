@@ -1,20 +1,18 @@
 package sorting;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class LongInputReader implements InputReader {
+public class LongInputReader implements InputReader<Long> {
     @Override
-    public List<String> readInput() {
+    public List<Long> readInput() {
         Scanner scanner = new Scanner(System.in);
-        List<String> input = new ArrayList<>();
+        List<Long> input = new ArrayList<>();
 
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            String[] nums = line.split("\\s+");
-            input.addAll(Arrays.asList(nums));
+        while (scanner.hasNextLong()) {
+            long num = scanner.nextLong();
+            input.add(num);
         }
 
         return input;

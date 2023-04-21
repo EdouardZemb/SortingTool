@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class LineInputReader implements InputReader {
+public class LineInputReader implements InputReader<String> {
     @Override
     public List<String> readInput() {
         Scanner scanner = new Scanner(System.in);

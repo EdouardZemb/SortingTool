@@ -1,7 +1,7 @@
 package sorting;
 
 public class InputReaderFactory {
-    public static InputReader create(InputType inputType) {
+    public static InputReader<?> create(InputType inputType) {
         if (inputType == null) {
             throw new IllegalArgumentException("Data type cannot be null");
         }

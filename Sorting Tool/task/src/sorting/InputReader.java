@@ -2,5 +2,5 @@ package sorting;
 
 import java.util.List;
 
-public interface InputReader {
-    List<String> readInput();}
+public interface InputReader<T> {
+    List<T> readInput();}
