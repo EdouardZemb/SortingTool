@@ -8,6 +8,7 @@ public class Main {
         CommandLineParser parser = new CommandLineParser(args);
         SortingType sortingType = parser.getSortingType();
         InputType inputType = parser.getInputType();
+        parser.controlArguments();
         ArgumentFactory argumentFactory = new ArgumentFactory(sortingType, inputType);
         List<Executable> arguments = argumentFactory.createArgumentList();
         ArgumentsListHandler processor = new ArgumentsListHandler(arguments);

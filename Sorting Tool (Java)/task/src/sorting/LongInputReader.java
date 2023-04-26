@@ -10,7 +10,12 @@ public class LongInputReader implements InputReader<Long> {
         Scanner scanner = new Scanner(System.in);
         List<Long> input = new ArrayList<>();
 
-        while (scanner.hasNextLong()) {
+        while (scanner.hasNext()) {
+            if (!scanner.hasNextLong()) {
+                System.out.println("\"" + scanner.next() + "\" isn't a long. It's skipped.");
+                scanner.next();
+                continue;
+            }
             long num = scanner.nextLong();
             input.add(num);
         }
